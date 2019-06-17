@@ -1,7 +1,21 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
 - clean: ['~']
 
+- shell:
+    - [sh ./pre-install.sh, Running pre-install script]
+    
 - link:
-    ~/.profile: profile
-    ~/.bashrc: bashrc
+    # git
+    ~/.gitconfig: git/gitconfig
+    # shell
+    ~/.profile: shell/profile
+    ~/.bashrc: shell/bashrc
+    ~/.zshrc: shell/zshrc
 
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
 
