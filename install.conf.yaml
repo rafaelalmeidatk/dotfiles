@@ -7,6 +7,11 @@
 
 - shell:
     - [sh ./pre-install.sh, Running pre-install script]
+    - command: zsh ./install-apps.sh
+      description: Installing apps
+      stdout: true
+      stderr: true
+      stdin: true
     
 - link:
     # git
