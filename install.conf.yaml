@@ -20,6 +20,7 @@
     ~/.profile: shell/profile
     ~/.bashrc: shell/bashrc
     ~/.zshrc: shell/zshrc
+    ~/.hyper.js: shell/hyper.js
 
 - shell:
     - [zsh ./post-install.zsh, Running post-install script]
