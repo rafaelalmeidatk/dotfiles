@@ -1,24 +1,25 @@
 ZSH_BASE=$HOME/dotfiles
-source ~/.aliases
-source ~/.functions
 
 source $ZSH_BASE/antigen/antigen.zsh
 
+# Use Oh My ZSH
 antigen use oh-my-zsh
 
-# Terminal stuff
+# Plugins
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle z
-antigen bundle npm
 
+# Node
+antigen bundle lukechilds/zsh-nvm
+antigen bundle npm
 
 # "pure" theme
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
-# apply stuff
+# Apply stuff
 antigen apply
 

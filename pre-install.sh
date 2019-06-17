@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Update repo
 echo 'Updating repository'

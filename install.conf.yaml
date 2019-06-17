@@ -17,5 +17,6 @@
     ~/.zshrc: shell/zshrc
 
 - shell:
+    - [zsh ./post-install.zsh, Running post-install script]
     - [git submodule update --init --recursive, Installing submodules]
 
