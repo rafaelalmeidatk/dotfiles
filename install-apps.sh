@@ -4,7 +4,7 @@ echo 'Asking sudo permission...'
 sudo true
 
 echo 'Updating repo and installing packages...'
-sudo apt-get update
+sudo apt-get -qq update
 sudo apt-get install -y \
     xclip \
     gconf2 \
@@ -23,8 +23,7 @@ sudo snap install postman
 sudo snap install gimp
 
 # Downloads folder
-rm -r downloads
-mkdir downloads
+rm -r downloads && mkdir downloads
 
 # Yarn
 if ! [ -x "$(command -v yarn)" ]; then
@@ -46,7 +45,7 @@ if ! [ -x "$(command -v docker)" ]; then
     echo 'Installing Docker...'
     sh -c "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -"
     sh -c "sudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable\""
-    sudo apt install -y docker-ce
+    sudo apt-get install -y docker-ce
 fi
 
 # Docker compose
@@ -54,4 +53,13 @@ if ! [ -x "$(command -v docker-compose)" ]; then
     echo 'Installing Docker Compose...'
     sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
+fi
+
+# Dotnet
+if ! [ -x "$(command -v dotnet)" ]; then
+    echo 'Installing Dotnet...'
+    wget -P downloads -q https://packages.microsoft.com/config/ubuntu/19.04/packages-microsoft-prod.deb
+    sudo dpkg -i downloads/packages-microsoft-prod.deb
+    sudo apt-get -qq update
+    sudo apt-get install -y dotnet-sdk-2.2
 fi
