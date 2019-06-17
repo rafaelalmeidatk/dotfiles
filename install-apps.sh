@@ -26,9 +26,17 @@ sudo snap install gimp
 rm -r downloads
 mkdir downloads
 
+# Yarn
+if ! [ -x "$(command -v yarn)" ]; then
+    echo 'Installing Yarn...'
+    sh -c "curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -"
+    sh -c "echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | sudo tee /etc/apt/sources.list.d/yarn.list"
+    sudo apt-get install -y --no-install-recommends yarn
+fi
+
 # Hyper
 if ! [ -x "$(command -v hyper)" ]; then
-    echo 'Downloading Hyper...'
+    echo 'Installing Hyper...'
     curl -L https://releases.hyper.is/download/deb -o downloads/hyper.deb
     sudo apt-get install downloads/hyper.deb
 fi
