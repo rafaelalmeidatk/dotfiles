@@ -22,6 +22,7 @@ sudo snap install spotify
 sudo snap install gitkraken
 sudo snap install postman
 sudo snap install gimp
+sudo snap install vlc --channel=latest/stable
 
 # Downloads folder
 rm -r downloads && mkdir downloads
