@@ -12,7 +12,8 @@ sudo apt-get install -y \
     ca-certificates \
     curl \
     software-properties-common \
-    gparted
+    gparted \
+    python3-pip
 
 # Snaps
 echo 'Installing snaps...'
