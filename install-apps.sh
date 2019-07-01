@@ -49,6 +49,8 @@ if ! [ -x "$(command -v docker)" ]; then
     sh -c "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -"
     sh -c "sudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable\""
     sudo apt-get install -y docker-ce
+    echo 'Adding the user to the docker group...'
+    sudo usermod -aG docker $USER
 fi
 
 # Docker compose
