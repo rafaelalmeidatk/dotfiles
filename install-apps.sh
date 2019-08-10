@@ -13,7 +13,9 @@ sudo apt-get install -y \
     curl \
     software-properties-common \
     gparted \
-    python3-pip
+    python3-pip \
+    build-essential \
+    cmake
 
 # Snaps
 echo 'Installing snaps...'
