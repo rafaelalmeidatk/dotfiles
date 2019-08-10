@@ -20,7 +20,6 @@ echo 'Installing snaps...'
 sudo snap install code --classic
 sudo snap install slack --classic
 sudo snap install spotify
-sudo snap install gitkraken
 sudo snap install postman
 sudo snap install gimp
 sudo snap install vlc --channel=latest/stable
